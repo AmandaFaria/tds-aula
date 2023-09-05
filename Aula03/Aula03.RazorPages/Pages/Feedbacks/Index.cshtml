@@ -1,0 +1,41 @@
+@page
+@model Aula03.RazorPages.Pages.Feedbacks.Index
+
+<h1>Feedbacks de Clientes</h1>
+
+<hr/>
+<td><a asp-page="/Feedbacks/Create">Realizar um novo feedback</a></td>
+<hr/>
+
+<div>
+    <table>
+        <thead>
+            <tr>
+                <td>@Html.DisplayNameFor(model => model.FeedbackList[0].IdFeedback)</td>
+                <td>@Html.DisplayNameFor(model => model.FeedbackList[0].NomeCliente)</td>
+                <td>@Html.DisplayNameFor(model => model.FeedbackList[0].EmailCliente)</td>
+                <td>@Html.DisplayNameFor(model => model.FeedbackList[0].DataFeedback)</td>
+                <td>@Html.DisplayNameFor(model => model.FeedbackList[0].Comentario)</td>
+                <td>@Html.DisplayNameFor(model => model.FeedbackList[0].Avaliacao)</td>
+            </tr>
+        </thead>
+    </table>
+    <tbody>
+        @foreach (var feedbackModel in Model.FeedbackList)
+        {
+            <tr>
+                <td>@Html.DisplayFor(model => feedbackModel.IdFeedback)</td>
+                <td>@Html.DisplayFor(model => feedbackModel.NomeCliente)</td>
+                <td>@Html.DisplayFor(model => feedbackModel.EmailCliente)</td>
+                <td>@Html.DisplayFor(model => feedbackModel.DataFeedback)</td>
+                <td>@Html.DisplayFor(model => feedbackModel.Comentario)</td>
+                <td>@Html.DisplayFor(model => feedbackModel.Avaliacao)</td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@feedbackModel.IdFeedback">Alterar</a>
+                    <a asp-route="./Delete" asp-route-id="@feedbackModel.IdFeedback">Remover</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</div>

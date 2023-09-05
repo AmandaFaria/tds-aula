@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Feedbacks de Clientes</title>
+    <link rel="stylesheet" href="~/Aula03.styles.css" asp-append-version="true"/>
+</head>
+<body>
+    <header>
+        <partial name="./_MainMenuPartialPage.cshtml"/>
+    </header>
+    <main>
+        @RenderBody()
+    </main>
+    <p><hr/></p>
+    <footer>2023 - Amanda Faria</footer>
+
+    @RenderSection("scripts", required:false)
+</body>
+</html>

@@ -1,0 +1,19 @@
+@page "{id:int}"
+@model Aula03.RazorPages.Pages.Feedbacks.Delete
+
+<div>
+    <h1>Remover Feedback de Cliente</h1>
+
+    <p><strong>Nome do Cliente:</strong> @Model.FeedbackModel.NomeCliente</p>
+    <p><strong>Nome do Cliente:</strong> @Model.FeedbackModel.EmailCliente</p>
+    <p><strong>Nome do Cliente:</strong> @Model.FeedbackModel.DataFeedback</p>
+    <p><strong>Nome do Cliente:</strong> @Model.FeedbackModel.Comentario</p>
+    <p><strong>Nome do Cliente:</strong> @Model.FeedbackModel.Avaliacao</p>
+</div>
+
+<form method="post">
+    <div class="form-group">
+        <input type="submit" value="Delete" class="btn btn-danger" />
+        <a asp-page="./Feedback/Index" class="btn btn-primary">Voltar</a>
+    </div>
+</form>

@@ -1,0 +1,45 @@
+@page
+@model Aula03.RazorPages.Pages.Feedbacks.Create
+
+<h1>Realizar Feedback de Cliente</h1>
+
+<hr/>
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-dange"></div>
+            <input type="hiden" asp-for="FeedbackModel.IdFeedback"/>
+            <div class="form-group">
+                <label asp-for="FeedbackModel.NomeCliente"></label>
+                <input asp-for="FeedbackModel.NomeCliente" class="form-control" />
+                <span asp-validation-for="FeedbackModel.NomeCliente" class="text-dange"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FeedbackModel.EmailCliente"></label>
+                <input asp-for="FeedbackModel.EmailCliente" type="email" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="FeedbackModel.DataFeedback"></label>
+                <input asp-for="FeedbackModel.DataFeedback" type="date" class="form-control" />
+                <span asp-validation-for="FeedbackModel.DataFeedback" class="text-dange"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FeedbackModel.Comentario"></label>
+                <input asp-for="FeedbackModel.Comentario" class="form-control"></textarea>
+                <span asp-validation-for="FeedbackModel.Comentario" class="text-dange"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FeedbackModel.Avaliacao"></label>
+                <input asp-for="FeedbackModel.Avaliacao" type="number" min="1" max="5" class="form-control" />
+                <span asp-validation-for="FeedbackModel.Avaliacao" class="text-dange"></span>
+            </div>
+            <br/>
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary" value="Salvar" />
+                <a asp-page="/Feedbacks/Index" class="btn btn-secondary">Cancelar</a>
+
+            </div>
+        </form>
+    </div>
+    
+</div>
